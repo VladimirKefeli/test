@@ -13,6 +13,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    func showHouse() {
+        sceneView.scene = SCNScene(named: "art.scnassets/house.scn")!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,11 +26,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+        // Setup house with scn file
+        showHouse()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
